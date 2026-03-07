@@ -5,10 +5,10 @@ A.1 JavaLand 2026 takes place at Europa-Park, Europa-Park-Str. 2, 77977 Rust, Ge
 A.2 Conference dates are March 9-12, 2026. Monday March 9 is the Unconference at Hotel Santa Isabel from 3:00 pm to 6:30 pm.
 A.3 Tuesday March 10 and Wednesday March 11 are the main conference days with talks, keynotes, and community sessions. The conference takes place in the Europa-Park Confertainment Center.
 A.4 Thursday March 12 is the training day with full-day hands-on workshops. These require separate registration (All-in-One ticket).
-A.5 The venue is Europa-Park in Rust, Germany. Hotel guests can use free hotel parking; day visitor parking at the Confertainment Center costs €29 per day.
+A.5 Hotel parking is free for guests. Day visitor parking at the Confertainment Center costs €29 per day.
 
 §B Session Rooms
-B.1 Dome — The main stage used for keynotes and high-capacity talks.
+B.1 Dome — The main stage used for keynotes and high-capacity talks. All Dome sessions are streamed live via the JavaLand website and heise.
 B.2 Bellevue — Architecture & Methodology sessions; a mid-sized room for design and process talks.
 B.3 Sanssouci — Java Language & Community track; great for core Java and ecosystem discussions.
 B.4 Salle Petit Paris — Mixed topics room covering a broad range of subjects.
@@ -18,133 +18,61 @@ B.7 Das Studio — DevOps & Tooling sessions; build systems, CI/CD, and develope
 B.8 Traumpalast — Hands-on workshops and extended coding sessions.
 B.9 Jeanne d'Arc — Extended sessions and deep-dive talks that run longer than the standard slot.
 B.10 Magic Cinema — Security & Advanced topics; cryptography, application security, and advanced JVM features.
-B.11 Hackergarten (Foyer Galerie) — Community coding space where attendees contribute to open-source projects together.
+B.11 Hackergarten (Foyer Galerie) — Community coding space where attendees contribute to open-source projects together. Also home to the Dev Lounge for networking between talks.
 B.12 Goethe — Home of the legendary Mario Kart tournament.
-B.13 Heinrich Mack — Board games and Magic: The Gathering evenings.
+B.13 Heinrich Mack — Speaker Lounge and home of board games and Magic: The Gathering evenings.
 
-§C Must-See Talks — Tuesday March 10
-C.1 08:30 "Secure AI agents with Quarkus LangChain4j" by Willem Jan Glerum — CircusCelebration — Learn how to build secure AI agents using Quarkus and LangChain4j with guardrails and RAG. This is a conference talk, not a workshop.
-C.2 08:30 "The road to JUnit 6" by Marc Philipp — Das Studio — The JUnit maintainer shares what is coming in the next major version of the testing framework.
-C.3 08:30 "Coding mise en place - DDD und Ports-and-Adapters" by Dominik Galler — Bellevue — Domain-driven design and ports-and-adapters architecture applied in practice.
-C.4 08:30 "Generics - You Never Know What You're Gonna Get" by Bram Janssens — Sanssouci — A deep dive into Java generics and their surprising behaviors.
-C.5 08:30 "A billion dollar problem: Proper null handling in Java" by Benedikt Loup — Versailles — Strategies for avoiding NullPointerExceptions in Java code.
-C.6 10:00 KEYNOTE "AI: It AI-n't What You Think!" by Dr. Venkat Subramaniam — Dome — A keynote exploring common misconceptions about AI and what it really means for developers.
-C.7 11:00 "Scaling Integration Tests: Parallel Spring Tests with JUnit and Testcontainers" by Marvin Rensing — Versailles — Strategies and patterns for running integration tests at scale in large codebases.
-C.8 11:00 "KI + AST + ESLint = Codequalität auf dem nächsten Level" by Milena Fluck, Andy Schmidt — Bellevue — Combining AI, AST analysis, and ESLint for next-level code quality.
-C.9 11:00 "Korrektheit trotz Nicht-Determinismus: KI-Anforderungen in der Praxis" by Dr. Felix Kammerlander — Magic Cinema — AI requirements and correctness despite non-determinism.
-C.10 12:00 "AI Testing Beyond the Basics: Ensuring Truthful and Reliable Chatbots and Agents" by Mario-Leander Reimer — Dome — Going beyond simple unit tests when building AI-powered applications.
-C.11 12:00 "The Trust Trap - Security von Coding Assistants" by Clemens Hübner — Magic Cinema — Security implications and risks of using AI coding assistants in your workflow.
-C.12 12:00 "BoxLang: The Return of the Dynamic Language" by Luis Majano — Bellevue — A new dynamic JVM language for modern development.
-C.13 12:00 "Clean Architecture: Fundament wartbarer Software oder nur ein Hype?" by Fedor Zholud — Versailles — An honest assessment of Clean Architecture in practice.
-C.14 13:00 "Modern Java - Ask Me Anything" by Nicolai Parlog — Sanssouci — An interactive AMA session about modern Java features and where the language is heading.
-C.15 13:00 "The Past, the Present, and the Future of Enterprise Java" by Ivar Grimstad — Dome — A journey through Enterprise Java from J2EE to Jakarta EE and beyond.
-C.16 13:00 "Der Keycloak-Fehler, den 90% aller Entwickler machen" by Niko Koebler — CircusCelebration — The most common Keycloak mistake and how to avoid it.
-C.17 13:00 "Deep dive into data streaming security" by Olena Kutsenko — Salle Petit Paris — Security considerations in data streaming architectures.
-C.18 14:00 "Exploring Structured Concurrency and Scoped Values in Java 25" by Hanno Embregts — Magic Cinema — Deep dive into Project Loom's structured concurrency and scoped values arriving in Java 25.
-C.19 14:00 "Bessere Assertions und Fehlermeldungen mit AssertJ" by Ole Koring — Sanssouci — Writing better test assertions with AssertJ.
-C.20 14:00 "The Road Not Taken: A Developer's Guide to Life Beyond Spring Boot" by Frederik Pietzko — Das Studio — Exploring alternatives to Spring Boot in the Java ecosystem.
-C.21 15:00 "EU AI Act: Compliance ohne Kopfschmerzen" by Christian Fritz, Alexander Eimer — CircusCelebration — Understanding and implementing EU AI Act compliance without the headaches.
-C.22 15:00 "Post-Quantum-Cryptography (PQC) in Java" by Tim Schade — Magic Cinema — Post-quantum cryptography algorithms and their Java implementations.
-C.23 15:00 "Was gibts Neues bei Spring Boot und Containern?" by Matthias Haeussler — Das Studio — What is new in Spring Boot and container support.
-C.24 16:00 "Spring AI trifft MCP: Live-Entwicklung einer smarten Anwendung" by Bernhard Löwenstein, Ionida Löwenstein — Bellevue — How Spring AI integrates with the Model Context Protocol for building AI applications.
-C.25 16:00 "Getting more out of Maven" by Marit van Dijk, Andres Almiray — Dome — Advanced Maven tips and techniques for Java developers.
-C.26 16:00 "Von Legacy zu Cloud: KI-gestützte Java-Modernisierung mit Konveyor" by Markus Zimmermann — Das Studio — AI-assisted Java modernization with the Konveyor project.
-C.27 16:00 "82 Bugs I Collected in a Year You Won't Believe Made It to Production" by Francois Martin — Magic Cinema — A curated collection of surprising production bugs.
-C.28 17:00 "AI-Powered Form Wizards: Chat, Click, Done" by Loïc Magnette — Das Studio — Building intelligent form experiences powered by conversational AI.
-C.29 17:00 "Service-to-service authentication mit Keycloak und Spring Security" by Nikolas Hermann — Magic Cinema — Securing service-to-service calls with Keycloak.
-C.30 17:00 "Snake in 10 Lines: Learning More by Coding Less" by Guus de Wit — Salle Petit Paris — A fun coding exercise that teaches Java essentials.
+§C Evening Activities & Community Events
+C.1 OpenPark evening event — Tuesday March 10. Dinner is included. See the OpenPark page on javaland.eu for details.
+C.2 Mario Kart Tournament — Tuesday 11:00-21:30 in the Goethe room. Sign up with Stefan Nachtrab! A JavaLand tradition with fierce competition.
+C.3 Magic: The Gathering — Tuesday and Wednesday evenings in Heinrich Mack. Bring your decks or borrow from the community collection.
+C.4 Board Games Night — Tuesday and Wednesday evenings in Heinrich Mack. A wide selection of board games for a relaxed evening.
+C.5 Java macht Musik! — Tuesday 17:30-19:00 in Hackergarten (Foyer Galerie). Live music performed by members of the Java community.
+C.6 Unconference — Monday March 9 from 3:00 pm to 6:30 pm at the Hotel Santa Isabel. A relaxed exchange among like-minded people before the main conference.
 
-§D Must-See Talks — Wednesday March 11
-D.1 09:00 "Observing Project Valhalla" by Prof. Dr. Cay Horstmann — Dome — An in-depth look at value types and Project Valhalla's progress toward the JVM.
-D.2 09:00 "AI-driven reverse engineering" by Martin Toshev — Das Studio — Using AI techniques to reverse-engineer and understand legacy systems.
-D.3 09:00 "Jakarta Data - Das Ende des Boilerplate Code?" by Thorben Janssen — Bellevue — How Jakarta Data eliminates repetitive data access code.
-D.4 09:00 "Softwarearchäologie mit KI" by Markus Harrer — CircusCelebration — Using AI for software archaeology and understanding legacy codebases.
-D.5 09:00 "No More Works on My Machine - Reproducible Dev Environments Made Easy" by Sascha Selzer — Magic Cinema — Tools and techniques for reproducible development environments.
-D.6 10:00 "Panel: Java (25)" — Bellevue — A panel discussion about Java 25 and the future of the language.
-D.7 10:00 "Vector Search Made Simple: Getting Started with OpenSearch for AI Applications" by Dotan Horovits — Das Studio — Practical introduction to vector search and embeddings for Java developers.
-D.8 10:00 "DevOps Meets MIDI: Automate Everything with the Push of a Button!" by Mario-Leander Reimer — Salle Petit Paris — A creative take on DevOps automation using MIDI controllers.
-D.9 10:00 "Von chaotischem AI-Code zu strukturierten Workflows: Rule-Files in der Praxis" by Ferdinand Ade, Marco Emrich — Jeanne d'Arc — Structuring AI-generated code with rule files.
-D.10 11:00 Community Keynote: Live-Awards, Voting and Community-Momente — Dome — The beloved community keynote with live awards, audience voting, and celebration of the Java community.
-D.11 12:00 "Bootiful Spring Boot: A DOGumentary" by Josh Long — Dome — Josh Long's entertaining and informative take on the latest in Spring Boot.
-D.12 12:00 "Catching the 137-Killer: A Java Memory Forensics Investigation" by Martijn Dashorst — Jeanne d'Arc — A forensic investigation into mysterious Java memory issues.
-D.13 12:00 "Building a real-time collaborative editor" by Dr. Mihaela Gheorghe-Roman — Das Studio — Architecture and implementation of a real-time collaborative editing system.
-D.14 12:30 "Agentic Coding mit Java - Professionelle Softwareentwicklung mit KI-Assistenz" by Frederik Wystup — Traumpalast — Building agentic coding workflows and AI-assisted development tools with Java. Extended 3-hour session.
-D.15 13:00 "Local LLMs to Enterprise AI: from your laptop to production" by Marta Blaszczyk, Marco Klaassen — Dome — The journey from running local language models to deploying enterprise-grade AI solutions.
-D.16 13:00 "Mein DDD ist kaputt - Wenn Architektur allein nicht reicht" by Andreas Voigt — Bellevue — When domain-driven design alone isn't enough.
-D.17 14:00 "The Evolution of Design Patterns in the Age of AI" by Miroslav Wengner — Dome — How classic design patterns are evolving as AI reshapes software architecture.
-D.18 14:00 "Vektordatenbanken - Grundlagen und praktische Anwendungen" by Prof. Dr. Olaf Herden — CircusCelebration — Vector databases fundamentals and practical applications.
-D.19 15:00 "Von REST zu Agentic-API: Den LLM-API-Consumer verstehen" by Felix Medam — Sanssouci — From REST APIs to agentic APIs for LLM consumption.
-D.20 15:00 "Die All Stars der Software Bugs - Staffel 2" by Christian Seifert — Dome — The greatest hits of software bugs, season 2.
-D.21 16:00 "From CRUD to Cognitive: Modernizing Legacy Java Apps with Embedded AI" by Ed Burns — Dome — Transitioning traditional CRUD applications into cognitive, AI-enhanced systems.
-D.22 16:00 "Nieder mit den Mocks - Quarkus TestResources" by Benedikt Werner — Salle Petit Paris — Replacing mocks with Quarkus TestResources for better integration tests.
-D.23 16:00 "Kontext ist alles: Architekturdokumentation für Mensch und KI" by Marcus Held — Magic Cinema — Architecture documentation for both humans and AI systems.
-D.24 17:00 "Legacy-Modernisierung mit DDD und Event Storming" by Sven Mueller — Dome — Modernizing legacy systems using DDD and event storming.
-D.25 17:00 "Old and busted: git. New hotness: jujutsu." by Christoph Iserlohn — Jeanne d'Arc — Introduction to jujutsu, the modern alternative to git.
+§D Europa-Park Rides (for between sessions!)
+D.1 Europa-Park is one of Europe's largest theme parks. Conference attendees can enjoy park attractions during breaks.
+D.2 Silver Star — One of Europe's tallest and fastest steel coasters, reaching 130 km/h.
+D.3 Blue Fire Megacoaster — A launched steel coaster with multiple inversions in the Iceland area.
+D.4 Wodan Timburcoaster — One of Europe's longest wooden roller coasters in the Germany area.
+D.5 Arthur — An indoor family coaster adventure through the world of Arthur and the Minimoys.
+D.6 Poseidon — A thrilling water coaster. You will get wet!
+D.7 Eurosat CanCan Coaster — A dark indoor coaster with neon lights and cancan music.
 
-§E Evening Activities
-E.1 Mario Kart Tournament — Tuesday 11:00-21:30 in the Goethe room. Sign up with Stefan Nachtrab! A JavaLand tradition with fierce competition.
-E.2 Magic: The Gathering — Tuesday and Wednesday evenings in Heinrich Mack. Bring your decks or borrow from the community collection.
-E.3 Board Games Night — Tuesday and Wednesday evenings in Heinrich Mack. A wide selection of board games for a relaxed evening.
-E.4 Java macht Musik! — Tuesday 17:30-19:00 in Hackergarten (Foyer Galerie). Live music performed by members of the Java community.
+§E Food & Drinks
+E.1 Unlimited coffee, water, and apple spritzer are available all day at the conference venue.
+E.2 Morning coffee break from 9:00 am to 10:30 am with snacks and fruit.
+E.3 Lunch is included with your conference ticket and served from 11:30 am to 2:15 pm. Options: Flammkuchen stand, Walters Wurstbude (Urwurst, Flieger Fries, Poutine), Burger Bär (Cheeseburger, Hamburger, French fries), Marios Pizza (Margherita and Salami slices), Chez Marianne (ice cream).
+E.4 Afternoon coffee break from 3:30 pm to 4:30 pm with snacks and fruit.
+E.5 Dinner is only available on Tuesday March 10 as part of the OpenPark evening event.
 
-§F Europa-Park Rides (for between sessions!)
-F.1 Europa-Park is one of Europe's largest theme parks. Take advantage of access to park attractions during breaks.
-F.2 Silver Star — One of Europe's tallest and fastest steel coasters, reaching 130 km/h.
-F.3 Blue Fire Megacoaster — A launched steel coaster with multiple inversions in the Iceland area.
-F.4 Wodan Timburcoaster — One of Europe's longest wooden roller coasters in the Germany area.
-F.5 Arthur — An indoor family coaster adventure through the world of Arthur and the Minimoys.
-F.6 Poseidon — A thrilling water coaster. You will get wet!
-F.7 Eurosat CanCan Coaster — A dark indoor coaster with neon lights and cancan music.
+§F Registration & Tickets
+F.1 Tickets can be viewed, downloaded, and scanned digitally via your DOAG profile at meine.doag.org under "Tickets & Rooms".
+F.2 Physical tickets can be printed at home; badges with lanyards are provided on-site.
+F.3 The registration desk is at the main entrance of the Confertainment Center.
+F.4 Registration desk hours: Tuesday March 10 from 7:30 am to 11:00 am; Wednesday March 11 from 8:00 am to 11:00 am.
+F.5 On-site ticket purchase is possible but All-in-One training day slots may be full — no guarantee of availability.
+F.6 Training day workshop selection can be changed up to seven days before the event if spots remain.
 
-§G Food & Drinks at the Conference
-G.1 Unlimited coffee, water, and apple spritzer are available all day at the conference venue.
-G.2 Morning coffee break with snacks and fruit is served from 9:00 am to 10:30 am.
-G.3 Lunch is included with your conference ticket and served from 11:30 am to 2:15 pm near the Dome. Options include Flammkuchen, Walters Wurstbude (sausages, fries), Burger Bär (burgers), Marios Pizza, and Chez Marianne (ice cream).
-G.4 Afternoon coffee break with snacks and fruit is served from 3:30 pm to 4:30 pm.
-G.5 Dinner is only available on Tuesday March 10 as part of the OpenPark evening event.
+§G Hotels & Getting There
+G.1 Europa-Park partner hotels: Krønasår, Bell Rock, El Andaluz, and Colosseo.
+G.2 Hotel parking is free for guests. Day visitor parking at the Confertainment Center costs €29 per day.
+G.3 Electric car charging: four points each at Krønasår, Bell Rock, and El Andaluz; twelve at Colosseo. Two fast chargers at Colosseo and Bell Rock, and between Krønasår hotel and Rulantica.
+G.4 Online hotel check-in is available via the Europa-Park Hotels app on the day of arrival.
+G.5 A shuttle service runs between the partner hotels and the conference venue. See the "Getting there" page on javaland.eu for the full schedule.
 
 §H Practical Tips
-H.1 WiFi is available in all session rooms. All lecture rooms are equipped with Wi-Fi, a projector and screen, or a large monitor.
+H.1 WiFi is available in all session rooms. All rooms have a projector and screen or large monitor. Laptops are not provided — bring your own. MacBook users should bring an adapter.
 H.2 The Dev Lounge at the Hackergarten (Foyer Galerie) is a great spot for networking and coding between talks.
 H.3 Don't miss the Community Keynote on Wednesday at 11:00 in the Dome — it features live awards and audience voting.
-H.4 Thursday workshops require separate registration (All-in-One ticket). Selection can be changed up to seven days before the event.
-H.5 Wear comfortable shoes — you will be walking between areas to reach different session rooms.
-H.6 The JavaLand app and DOAG profile have the full schedule with room maps and personal agenda/favorites features.
-H.7 Laptops are not provided in session rooms. If you use a MacBook, bring an adapter.
-H.8 The Speaker Lounge is at Heinrich Mack — a quiet space to prepare before your talk.
-H.9 All sessions (except workshops) will be recorded and made available free of charge to all participants afterwards.
-H.10 The JavaLand Studio is located in the Dome and streams all Dome sessions live via the website and heise.
+H.4 The Speaker Lounge is at Heinrich Mack — a quiet space to prepare before your talk. Speakers receive an exclusive JavaLand hoodie at the Infocorner.
+H.5 All sessions (except workshops) are recorded and available free of charge to all participants shortly after the event via the agenda.
+H.6 The JavaLand Studio is in the Dome and live-streams all Dome sessions via the website and heise.
+H.7 Wear comfortable shoes — you will be walking between areas to reach different session rooms.
 
-§I Registration & Tickets
-I.1 Tickets can be viewed, downloaded, and scanned digitally via your DOAG profile at meine.doag.org under "Tickets & Rooms".
-I.2 Physical tickets can be printed at home; badges with lanyards are provided on-site.
-I.3 The registration desk is at the main entrance of the Confertainment Center.
-I.4 Registration desk hours: Tuesday March 10 from 7:30 am to 11:00 am; Wednesday March 11 from 8:00 am to 11:00 am.
-I.5 On-site ticket purchase is possible but All-in-One training day slots may be full — no guarantee of availability.
-I.6 For collective orders, tickets can be assigned to colleagues via your profile under "Collective orders".
-
-§J Food & Drinks
-J.1 Unlimited coffee, water, and apple spritzer are available all day at the conference.
-J.2 Morning coffee break from 9:00 am to 10:30 am with snacks and fruit.
-J.3 Lunch is served from 11:30 am to 2:15 pm with multiple food stands.
-J.4 Lunch options include: Flammkuchen stand, Walters Wurstbude (Urwurst, Flieger Fries, Poutine), Burger Bär (Cheeseburger, Hamburger, French fries), Marios Pizza (Margherita and Salami slices), and Chez Marianne (ice cream).
-J.5 Afternoon coffee break from 3:30 pm to 4:30 pm with snacks and fruit.
-J.6 Dinner is only available as part of the OpenPark evening event on Tuesday March 10.
-
-§K Evening Event & Entertainment
-K.1 The OpenPark evening event takes place on Tuesday March 10 — dinner is included. See the OpenPark page for details.
-K.2 The Unconference takes place on Monday March 9 from 3:00 pm to 6:30 pm at the Hotel Santa Isabel — a relaxed exchange among like-minded people.
-
-§L Hotels & Getting There
-L.1 Europa-Park has four partner hotels: Krønasår, Bell Rock, El Andaluz, and Colosseo.
-L.2 Hotel parking is free for guests. Day visitor parking at the Confertainment Center costs €29 per day.
-L.3 Electric car charging stations: four charging points each at Krønasår, Bell Rock, and El Andaluz hotels; twelve at Colosseo hotel. Two fast charging points at Colosseo and Bell Rock, and between Krønasår hotel and Rulantica.
-L.4 Online hotel check-in is available via the Europa-Park Hotels app on the day of arrival.
-L.5 A shuttle service runs between hotels and the conference. See the "Getting there" page on javaland.eu for full details.
-
-§M Infocorner & Services
-M.1 The Infocorner is located near the main entrance of the Confertainment Center next to the stairs.
-M.2 Infocorner hours: Tuesday March 10 from 7:30 am to 6:00 pm; Wednesday March 11 from 8:00 am to 5:00 pm.
-M.3 A merchandise booth with JavaLand goodies is available at the exhibition area.
-M.4 A wardrobe is available in the exhibition area — check the park map for exact location and times.
-M.5 After checking out of the hotel, luggage should be left at the hotel until departure if possible.
+§I Infocorner & Services
+I.1 The Infocorner is near the main entrance of the Confertainment Center, next to the stairs.
+I.2 Infocorner hours: Tuesday March 10 from 7:30 am to 6:00 pm; Wednesday March 11 from 8:00 am to 5:00 pm.
+I.3 A merchandise booth with JavaLand goodies is in the exhibition area.
+I.4 A wardrobe is available in the exhibition area — check the park map for the exact location and times.
+I.5 After hotel check-out, leave luggage at the hotel until departure if possible.
