@@ -25,7 +25,7 @@ public interface ChatBot {
             """)
     @InputGuardrails({MaxLength.class})
     @OutputGuardrails({AllowedTalksGuardrail.class})
-    @ToolBox(IPLookupClient.class)
+    @ToolBox({IPLookupClient.class, CurrentTime.class})
     @McpToolBox({"weather", "javaland"})
     String chat(String userMessage);
 }
