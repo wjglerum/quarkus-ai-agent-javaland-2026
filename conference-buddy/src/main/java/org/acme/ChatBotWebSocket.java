@@ -22,7 +22,7 @@ public class ChatBotWebSocket {
 
     @OnOpen
     public String onOpen() {
-        return "Hi " + identity.getPrincipal().getName() + "! Welcome to your personal Quarkus chat bot. What can I do for you?";
+        return "Hi " + identity.getPrincipal().getName() + "! Welcome to the JavaLand 2026 Conference Buddy. Ask me about sessions, speakers, weather, or anything about the conference!";
     }
 
     @OnTextMessage
