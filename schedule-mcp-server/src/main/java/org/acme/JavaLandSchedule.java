@@ -1,68 +1,50 @@
 package org.acme;
 
+import io.quarkus.hibernate.orm.panache.PanacheRepository;
+import io.quarkus.panache.common.Parameters;
+import io.quarkus.panache.common.Sort;
 import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.inject.Inject;
-import jakarta.persistence.EntityManager;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @ApplicationScoped
-public class JavaLandSchedule {
-
-    @Inject
-    EntityManager em;
+public class JavaLandSchedule implements PanacheRepository<Talk> {
 
     public List<Talk> findByTime(String day, String time) {
-        return em.createQuery(
-                "from Talk t where lower(t.day) = lower(:day) and t.time = :time", Talk.class)
-                .setParameter("day", day)
-                .setParameter("time", time)
-                .getResultList();
+        return list("lower(day) = lower(:day) and time = :time",
+                Parameters.with("day", day).and("time", time));
     }
 
     public List<Talk> findHappeningAt(String day, String time) {
-        return em.createQuery(
-                "from Talk t where lower(t.day) = lower(:day) and t.time <= :time and t.endTime > :time", Talk.class)
-                .setParameter("day", day)
-                .setParameter("time", time)
-                .getResultList();
+        return list("lower(day) = lower(:day) and time <= :time and endTime > :time",
+                Parameters.with("day", day).and("time", time));
     }
 
     public List<Talk> findBySpeaker(String speakerQuery) {
-        return em.createQuery(
-                "from Talk t where lower(t.speaker) like :q", Talk.class)
-                .setParameter("q", "%" + speakerQuery.toLowerCase() + "%")
-                .getResultList();
+        return list("lower(speaker) like :q",
+                Parameters.with("q", "%" + speakerQuery.toLowerCase() + "%"));
     }
 
     public List<Talk> findByTopic(String topicQuery) {
         String q = "%" + topicQuery.toLowerCase() + "%";
-        return em.createQuery(
-                "from Talk t where lower(t.title) like :q or lower(t.category) like :q or lower(t.speaker) like :q", Talk.class)
-                .setParameter("q", q)
-                .getResultList();
+        return list("lower(title) like :q or lower(category) like :q or lower(speaker) like :q",
+                Parameters.with("q", q));
     }
 
     public List<Talk> findByRoom(String room) {
-        return em.createQuery(
-                "from Talk t where lower(t.room) like :q", Talk.class)
-                .setParameter("q", "%" + room.toLowerCase() + "%")
-                .getResultList();
+        return list("lower(room) like :q",
+                Parameters.with("q", "%" + room.toLowerCase() + "%"));
     }
 
     public List<Talk> getNextTalks(String day, String currentTime) {
-        return em.createQuery(
-                "from Talk t where lower(t.day) = lower(:day) and t.time > :currentTime order by t.time", Talk.class)
-                .setParameter("day", day)
-                .setParameter("currentTime", currentTime)
-                .setMaxResults(8)
-                .getResultList();
+        return find("lower(day) = lower(:day) and time > :currentTime order by time",
+                Parameters.with("day", day).and("currentTime", currentTime))
+                .page(0, 8).list();
     }
 
     public List<Talk> getAllTalks() {
-        return em.createQuery("from Talk t order by t.day, t.time", Talk.class)
-                .getResultList();
+        return listAll(Sort.by("day").and("time"));
     }
 
     static String formatTalks(List<Talk> talks) {
