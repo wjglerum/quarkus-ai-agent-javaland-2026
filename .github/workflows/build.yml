@@ -22,7 +22,7 @@ jobs:
       fail-fast: false
       matrix:
         step:
-          - conference-budy
+          - conference-buddy
           - schedule-mcp-server
           - weather-mcp-server
     steps:
