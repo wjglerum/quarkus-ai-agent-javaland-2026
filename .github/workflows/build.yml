@@ -1,0 +1,41 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Build ${{ matrix.step }}
+    permissions:
+      contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        step:
+          - conference-budy
+          - schedule-mcp-server
+          - weather-mcp-server
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          sparse-checkout: '${{ matrix.step }}'
+      - name: Setup Java
+        uses: actions/setup-java@v5
+        with:
+          java-version: 25
+          distribution: temurin
+          cache: maven
+      - name: Maven build
+        working-directory: ${{ matrix.step }}
+        run: mvn -B verify
