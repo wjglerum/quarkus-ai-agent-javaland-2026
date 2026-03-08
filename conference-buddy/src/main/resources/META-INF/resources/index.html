@@ -69,13 +69,12 @@
         .logo-icon {
             width: 48px;
             height: 48px;
-            background: linear-gradient(135deg, var(--accent-amber), #f59e0b);
+            background: linear-gradient(135deg, #4695EB, #1d6dd4);
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
-            box-shadow: 0 4px 12px rgba(251, 191, 36, 0.3);
+            box-shadow: 0 4px 12px rgba(70, 149, 235, 0.4);
         }
 
         .header-title {
@@ -343,7 +342,18 @@
         }
 
         .message.assistant .message-avatar {
-            background: linear-gradient(135deg, var(--accent-amber), #f59e0b);
+            background: linear-gradient(135deg, #4695EB, #1d6dd4);
+        }
+
+        .cursor {
+            display: inline-block;
+            color: var(--accent-blue);
+            animation: cursor-blink 0.7s ease-in-out infinite;
+        }
+
+        @keyframes cursor-blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
         }
 
         .message.user .message-avatar {
@@ -618,7 +628,14 @@
 <!-- Header -->
 <div class="header">
     <div class="header-left">
-        <div class="logo-icon">J</div>
+        <div class="logo-icon">
+            <svg width="28" height="28" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="50" cy="50" rx="46" ry="17" stroke="white" stroke-width="8"/>
+                <ellipse cx="50" cy="50" rx="46" ry="17" stroke="white" stroke-width="8" transform="rotate(60 50 50)"/>
+                <ellipse cx="50" cy="50" rx="46" ry="17" stroke="white" stroke-width="8" transform="rotate(-60 50 50)"/>
+                <circle cx="50" cy="50" r="10" fill="white"/>
+            </svg>
+        </div>
         <div class="header-title">
             <h1>JavaLand 2026 Conference Buddy</h1>
             <span class="subtitle">Europa-Park, Rust &mdash; AI-Powered Conference Assistant</span>
@@ -641,7 +658,7 @@
         <div class="chat-area">
             <div class="messages-container" id="messagesContainer">
                 <div class="welcome-message" id="welcomeMessage">
-                    <div class="welcome-icon">J</div>
+                    <div class="welcome-icon">⚡</div>
                     <h2>Welcome to JavaLand 2026!</h2>
                     <p>Ask me about sessions, speakers, locations, weather, or anything about the conference.</p>
                     <div class="welcome-chips">
@@ -724,53 +741,71 @@
     let toolStartTime = null;
 
     // ---- Tool Definitions ----
-    // These represent the tools available in the Quarkus AI agent.
-    // We simulate their activation based on message keywords and timing.
+    // Exact tool names matching @Tool annotations in the Quarkus AI agent.
+    // Shown in the Agent Activity panel based on message keyword heuristics.
     const TOOL_DEFS = [
         {
-            id: 'get_location',
-            icon: '\uD83D\uDD0D',
-            name: 'get_location',
-            desc: 'Resolving conference location...',
-            keywords: ['where', 'location', 'map', 'find', 'room', 'hall', 'venue', 'phantasialand', 'coffee', 'food', 'eat', 'restaurant'],
+            id: 'getCurrentTime',
+            icon: '\uD83D\uDD52',
+            name: 'getCurrentTime',
+            desc: 'Get current time and date',
+            keywords: ['now', 'current', 'happening', 'today', 'right now', 'time', 'when'],
+            delay: 100,
+            duration: 250
+        },
+        {
+            id: 'getLocation',
+            icon: '\uD83D\uDCCD',
+            name: 'getLocation',
+            desc: 'Get location based on public IP',
+            keywords: ['weather', 'jacket', 'rain', 'forecast', 'temperature', 'ride', 'blue fire', 'where am i'],
             delay: 200,
-            duration: 800
+            duration: 700
         },
         {
             id: 'current_weather',
-            icon: '\uD83C\uDF24\uFE0F',
+            icon: '\u26C5',
             name: 'current_weather',
-            desc: 'Checking current weather...',
-            keywords: ['weather', 'rain', 'sun', 'temperature', 'cold', 'warm', 'umbrella', 'forecast'],
-            delay: 200,
+            desc: 'Get current weather forecast',
+            keywords: ['weather', 'rain', 'sun', 'temperature', 'cold', 'warm', 'umbrella', 'forecast', 'jacket', 'ride'],
+            delay: 300,
             duration: 1200
         },
         {
             id: 'conference_schedule',
             icon: '\uD83D\uDCC5',
             name: 'conference_schedule',
-            desc: 'Looking up conference schedule...',
-            keywords: ['session', 'talk', 'schedule', 'speaker', 'workshop', 'today', 'tomorrow', 'keynote', 'track', 'time', 'when'],
+            desc: 'Get talks happening at a specific time',
+            keywords: ['happening', 'session', 'schedule', 'now', 'right now', 'today', 'time'],
             delay: 300,
-            duration: 1000
+            duration: 900
         },
         {
-            id: 'rag_search',
-            icon: '\uD83D\uDCDA',
-            name: 'RAG Search',
-            desc: 'Searching knowledge base...',
-            keywords: [],  // Always runs as a fallback
-            delay: 500,
-            duration: 1500
+            id: 'find_speaker',
+            icon: '\uD83C\uDFA4',
+            name: 'find_speaker',
+            desc: 'Find talks by a specific speaker',
+            keywords: ['speaker', 'presenter', 'venkat', 'josh', 'marc', 'philipp', 'who'],
+            delay: 300,
+            duration: 800
         },
         {
-            id: 'output_guardrail',
-            icon: '\u2705',
-            name: 'Output Guardrail',
-            desc: 'Validating response...',
-            keywords: [],  // Always runs last
-            delay: 0,  // Added dynamically
-            duration: 600
+            id: 'find_talk_by_topic',
+            icon: '\uD83D\uDD0D',
+            name: 'find_talk_by_topic',
+            desc: 'Search talks by topic keyword',
+            keywords: ['talk', 'about', 'topic', 'ai', 'security', 'quarkus', 'java', 'spring', 'testing', 'architecture', 'agent', 'langchain'],
+            delay: 300,
+            duration: 900
+        },
+        {
+            id: 'next_talks',
+            icon: '\u23E9',
+            name: 'next_talks',
+            desc: 'Get upcoming talks after current time',
+            keywords: ['next', 'upcoming', 'after', 'later', 'what\'s next'],
+            delay: 300,
+            duration: 800
         }
     ];
 
@@ -839,12 +874,27 @@
 
         const msg = document.createElement('div');
         msg.className = 'message assistant';
-        msg.innerHTML = `
-            <div class="message-avatar">J</div>
-            <div class="message-bubble">${formatMessage(text)}</div>
-        `;
+        msg.innerHTML = `<div class="message-avatar">⚡</div><div class="message-bubble"></div>`;
         messagesContainer.appendChild(msg);
-        scrollToBottom();
+
+        // Typewriter streaming effect
+        const bubble = msg.querySelector('.message-bubble');
+        let i = 0;
+        const chunkSize = 6;
+
+        function tick() {
+            i = Math.min(i + chunkSize, text.length);
+            if (i < text.length) {
+                bubble.innerHTML = escapeHtml(text.substring(0, i)) + '<span class="cursor">▌</span>';
+            } else {
+                bubble.innerHTML = formatMessage(text);
+            }
+            scrollToBottom();
+            if (i < text.length) {
+                setTimeout(tick, 18);
+            }
+        }
+        tick();
     }
 
     function addTypingIndicator() {
@@ -852,7 +902,7 @@
         msg.className = 'message assistant';
         msg.id = 'typingMessage';
         msg.innerHTML = `
-            <div class="message-avatar">J</div>
+            <div class="message-avatar">⚡</div>
             <div class="message-bubble">
                 <div class="typing-indicator">
                     <span></span><span></span><span></span>
@@ -913,36 +963,17 @@
             toolEntries.appendChild(sep);
         }
 
-        // Determine which tools to simulate
+        // Determine which tools to simulate based on message keywords
         const lowerText = userText.toLowerCase();
         const toolsToRun = [];
         let accumulatedDelay = 0;
 
-        // Check keyword-based tools
         TOOL_DEFS.forEach(tool => {
-            if (tool.id === 'output_guardrail') return; // Added last always
-            if (tool.id === 'rag_search') return; // Added as fallback
-
             const matches = tool.keywords.some(kw => lowerText.includes(kw));
             if (matches) {
                 toolsToRun.push({ ...tool, startDelay: accumulatedDelay + tool.delay });
                 accumulatedDelay += tool.delay + tool.duration;
             }
-        });
-
-        // Always add RAG search
-        const ragTool = TOOL_DEFS.find(t => t.id === 'rag_search');
-        toolsToRun.push({
-            ...ragTool,
-            startDelay: accumulatedDelay + ragTool.delay
-        });
-        accumulatedDelay += ragTool.delay + ragTool.duration;
-
-        // Always add output guardrail last
-        const guardrailTool = TOOL_DEFS.find(t => t.id === 'output_guardrail');
-        toolsToRun.push({
-            ...guardrailTool,
-            startDelay: accumulatedDelay + 200
         });
 
         // Schedule tool entry appearances
