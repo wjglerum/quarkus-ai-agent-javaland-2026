@@ -20,6 +20,10 @@
       {
         "name": "user",
         "description": "Regular user role"
+      },
+      {
+        "name": "admin",
+        "description": "Administrator role"
       }
     ]
   },
@@ -34,7 +38,19 @@
           "temporary": false
         }
       ],
-      "realmRoles": ["user"]
+      "realmRoles": ["user", "admin"]
+    },
+    {
+      "username": "bob",
+      "enabled": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "bob",
+          "temporary": false
+        }
+      ],
+      "realmRoles": ["user", "admin"]
     }
   ]
 }
