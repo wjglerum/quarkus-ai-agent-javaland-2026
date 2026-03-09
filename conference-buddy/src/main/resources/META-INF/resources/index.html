@@ -406,7 +406,7 @@
 
         /* Tool Activity Panel */
         .tool-panel {
-            width: 380px;
+            width: min(380px, 28vw);
             background: var(--bg-secondary);
             border-left: 1px solid var(--border-color);
             display: flex;
@@ -620,6 +620,71 @@
         .tool-stats .stat-value {
             color: var(--text-secondary);
             font-weight: 600;
+        }
+
+        /* Responsive: tighten up when zoomed in (effective viewport < ~1200px) */
+        @media (max-width: 1200px) {
+            .header {
+                padding: 10px 20px;
+            }
+            .header-title h1 {
+                font-size: 18px;
+            }
+            .header-title .subtitle {
+                display: none;
+            }
+            .badge {
+                padding: 4px 10px;
+                font-size: 11px;
+            }
+            .chat-prompt {
+                padding: 12px 20px;
+            }
+            .chat-input {
+                padding: 10px 16px;
+                font-size: 16px;
+            }
+            .tool-panel-header {
+                padding: 10px 14px;
+            }
+            .tool-panel-header h3 {
+                font-size: 12px;
+            }
+            .tool-entry {
+                padding: 10px 12px;
+            }
+            .tool-entry-name {
+                font-size: 12px;
+            }
+            .tool-entry-description,
+            .tool-entry-duration {
+                font-size: 11px;
+                padding-left: 28px;
+            }
+            .tool-stats {
+                padding: 8px 12px;
+                font-size: 11px;
+            }
+            .messages-container {
+                padding: 16px 20px;
+            }
+            .message-bubble {
+                font-size: 16px;
+            }
+        }
+
+        /* Further compact at very small effective viewports (heavy zoom) */
+        @media (max-width: 900px) {
+            .header-badge {
+                display: none;
+            }
+            .logo-icon {
+                width: 36px;
+                height: 36px;
+            }
+            .tool-panel-header h3 {
+                font-size: 11px;
+            }
         }
     </style>
 </head>
