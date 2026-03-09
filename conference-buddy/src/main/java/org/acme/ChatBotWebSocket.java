@@ -1,5 +1,6 @@
 package org.acme;
 
+import dev.langchain4j.guardrail.InputGuardrailException;
 import io.quarkus.security.Authenticated;
 import io.quarkus.security.identity.SecurityIdentity;
 import io.quarkus.websockets.next.OnOpen;
@@ -26,5 +27,11 @@ public class ChatBotWebSocket {
     }
 
     @OnTextMessage
-    public String onTextMessage(String message) { return chatBot.chat(message); }
+    public String onTextMessage(String message) {
+        try {
+            return chatBot.chat(message);
+        } catch (InputGuardrailException e) {
+            return "Your message was blocked: " + e.getMessage();
+        }
+    }
 }
