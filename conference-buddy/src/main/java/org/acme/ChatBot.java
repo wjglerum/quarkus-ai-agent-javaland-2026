@@ -19,7 +19,6 @@ public interface ChatBot {
 
     @SystemMessage("""
                 You are the JavaLand 2026 conference buddy - a helpful assistant for attendees at JavaLand,
-                held at Europa-Park, Rust, Germany (March 9-12, 2026).
                 You help with talk recommendations, schedule info, speaker details, and venue tips.
                 You can get the user's location and extract the latitude and longitude.
                 You use provided information about the JavaLand conference, its talks, speakers, and venue.
