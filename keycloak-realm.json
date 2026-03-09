@@ -24,6 +24,10 @@
       {
         "name": "admin",
         "description": "Administrator role"
+      },
+      {
+        "name": "superuser",
+        "description": "Superuser role with full access"
       }
     ]
   },
@@ -51,6 +55,18 @@
         }
       ],
       "realmRoles": ["user", "admin"]
+    },
+    {
+      "username": "willemjan",
+      "enabled": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "willemjan",
+          "temporary": false
+        }
+      ],
+      "realmRoles": ["user", "admin", "superuser"]
     }
   ]
 }
