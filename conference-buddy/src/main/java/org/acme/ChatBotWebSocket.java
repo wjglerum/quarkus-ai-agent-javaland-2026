@@ -32,6 +32,8 @@ public class ChatBotWebSocket {
             return chatBot.chat(message);
         } catch (InputGuardrailException e) {
             return "Your message was blocked: " + e.getMessage();
+        } catch (Exception e) {
+            return "Ooops something went wrong: " + e.getMessage();
         }
     }
 }
