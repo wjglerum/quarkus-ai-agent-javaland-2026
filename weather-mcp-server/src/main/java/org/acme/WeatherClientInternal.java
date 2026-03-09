@@ -13,6 +13,5 @@ public interface WeatherClientInternal {
 
     @GET
     @Path("/forecast")
-    String forecast(@RestQuery String latitude,
-                    @RestQuery String longitude);
+    String forecast(@RestQuery String city);
 }
