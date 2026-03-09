@@ -9,6 +9,9 @@ import io.quarkiverse.langchain4j.mcp.runtime.McpToolBox;
 import jakarta.enterprise.context.SessionScoped;
 import org.acme.guardrails.AllowedTalksGuardrail;
 import org.acme.guardrails.MaxLength;
+import org.acme.guardrails.NoExternalLinksGuardrail;
+import org.acme.guardrails.PromptInjectionGuardrail;
+import org.acme.guardrails.TopicGuardrail;
 
 @SessionScoped
 @RegisterAiService
@@ -23,8 +26,8 @@ public interface ChatBot {
                 When recommending talks, always mention the room and time slot.
                 If the user is in CircusCelebration, remind them they picked the best room at JavaLand!
             """)
-    @InputGuardrails({MaxLength.class})
-    @OutputGuardrails({AllowedTalksGuardrail.class})
+    @InputGuardrails({MaxLength.class, PromptInjectionGuardrail.class, TopicGuardrail.class})
+    @OutputGuardrails({AllowedTalksGuardrail.class, NoExternalLinksGuardrail.class})
     @ToolBox({IPLookupClient.class, CurrentTime.class})
     @McpToolBox({"weather", "javaland"})
     String chat(String userMessage);
