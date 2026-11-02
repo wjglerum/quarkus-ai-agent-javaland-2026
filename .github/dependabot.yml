@@ -11,10 +11,11 @@ updates:
       interval: "monthly"
       time: "07:00"
       timezone: "Europe/Amsterdam"
-    # Bump a dependency in every module in a single pull request.
+    # Bundle every Maven bump, across all modules, into one pull request.
     groups:
       maven:
-        group-by: "dependency-name"
+        patterns:
+          - "*"
 
   - package-ecosystem: "github-actions"
     directory: "/"
@@ -22,3 +23,7 @@ updates:
       interval: "monthly"
       time: "07:00"
       timezone: "Europe/Amsterdam"
+    groups:
+      github-actions:
+        patterns:
+          - "*"
