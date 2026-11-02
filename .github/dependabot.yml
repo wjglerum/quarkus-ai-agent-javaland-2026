@@ -1,11 +1,21 @@
 version: 2
 updates:
   - package-ecosystem: "maven"
-    directory: "/"
+    # One entry per module: each module pins its own versions, so the root
+    # aggregator alone only gets one of them bumped.
+    directories:
+      - "/conference-buddy"
+      - "/weather-mcp-server"
+      - "/schedule-mcp-server"
     schedule:
       interval: "monthly"
       time: "07:00"
       timezone: "Europe/Amsterdam"
+    # Bump a dependency in every module in a single pull request.
+    groups:
+      maven:
+        group-by: "dependency-name"
+
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
